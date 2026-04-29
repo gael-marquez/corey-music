@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Corey · Music Student</title>
+  <meta name="description" content="Portafolio de Corey — estudiante de música. Proyectos, previews y redes." />
+  <link rel="icon" type="image/png" href="svg/icon-web.png" />
+  <link rel="apple-touch-icon" href="svg/icon-web.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Caveat:wght@400..700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#08070b',
+            obsidian: '#0f0d14',
+            blush: '#ff5fa2',
+            hotpink: '#ff1f8f',
+            rose: '#ff8fc1',
+            cream: '#fbe7ef',
+          },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'sans-serif'],
+            hand: ['"Caveat"', 'cursive'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-ink text-cream font-display antialiased overflow-x-hidden">
+
+  <!-- noise overlay -->
+  <div class="noise"></div>
+
+  <!-- gradient blobs -->
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+
+  <!-- custom cursor -->
+  <div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+  <!-- nav -->
+  <nav class="fixed top-0 left-0 right-0 z-40 mix-blend-difference">
+    <div class="max-w-7xl mx-auto px-6 md:px-10 py-6 flex items-center justify-between">
+      <a href="#top" class="text-2xl md:text-3xl font-display font-bold tracking-tight">
+        corey<span class="text-blush">.</span>
+      </a>
+      <ul class="hidden md:flex gap-8 text-sm uppercase tracking-[0.2em]">
+        <li><a class="hover:text-blush transition" href="#about">sobre mí</a></li>
+        <li><a class="hover:text-blush transition" href="#music">música</a></li>
+        <li><a class="hover:text-blush transition" href="#videos">videos</a></li>
+        <li><a class="hover:text-blush transition" href="#projects">proyectos</a></li>
+        <li><a class="hover:text-blush transition" href="#contact">contacto</a></li>
+      </ul>
+      <a href="#contact" class="hidden md:inline-flex items-center gap-2 text-xs uppercase tracking-[0.2em] border border-cream/40 rounded-full px-4 py-2 hover:bg-cream hover:text-ink transition">
+        <span class="size-2 rounded-full bg-blush animate-pulse"></span>
+        booking
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header id="top" class="relative min-h-screen flex flex-col">
+
+    <!-- marquee at top — scrolls away when you scroll down -->
+    <div class="mt-20 overflow-hidden border-y border-cream/10 bg-obsidian/40 backdrop-blur-sm">
+      <div class="marquee py-3 whitespace-nowrap text-cream/70 font-display italic text-xl md:text-2xl">
+        <span>new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦</span>
+        <span>new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦ new ep dropping soon ✦ corey ✦</span>
+      </div>
+    </div>
+
+    <div class="flex-1 flex flex-col justify-end pb-16 pt-12 px-6 md:px-10">
+    <div class="max-w-7xl mx-auto w-full relative">
+      <p class="font-mono text-xs md:text-sm tracking-[0.3em] text-blush uppercase mb-6 reveal">
+        // music · composition · production
+      </p>
+
+      <h1 class="font-display font-bold leading-[0.85] tracking-tighter text-[18vw] md:text-[14vw] lg:text-[200px]">
+        <span class="block reveal">corey's</span>
+        <span class="block italic font-light text-cream/80 reveal" data-delay="120">
+          corner<span class="text-hotpink">.</span>
+        </span>
+      </h1>
+
+      <div class="mt-10 grid md:grid-cols-3 gap-8 items-end">
+        <p class="md:col-span-1 text-cream/70 max-w-md text-base md:text-lg leading-relaxed reveal" data-delay="240">
+          Estudiante de música en la Anáhuac. Me gusta hacer sonidos raros y
+          jugar con texturas sonoras, nunca digo que no a un buen café.
+        </p>
+
+        <div class="md:col-span-1 text-sm font-mono text-cream/60 space-y-1 reveal" data-delay="360">
+          <p>↳ guitarra · bajo · piano</p>
+          <p>↳ fan de los strokes</p>
+          <p>↳ inspirada por Jack, un shiba gordo 🐕</p>
+        </div>
+
+        <div class="md:col-span-1 flex md:justify-end reveal" data-delay="480">
+          <a href="#music" class="group inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em]">
+            <span class="size-12 rounded-full border border-cream/40 grid place-items-center group-hover:bg-blush group-hover:border-blush transition">
+              <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+            </span>
+            escuchar
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="relative py-32 md:py-40 px-6 md:px-10">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-start">
+
+      <div class="lg:col-span-5 lg:sticky lg:top-32 reveal">
+        <p class="font-mono text-xs tracking-[0.3em] text-blush mb-4">// 01 · about</p>
+        <h2 class="font-display text-5xl md:text-7xl font-bold leading-none tracking-tighter">
+          un poco<br>
+          <span class="text-blush italic font-light">sobre mí</span>
+        </h2>
+        <p class="font-hand text-3xl text-cream/80 mt-6 -rotate-2 inline-block">
+          y mucho ruido.
+        </p>
+      </div>
+
+      <div class="lg:col-span-7 space-y-10">
+        <p class="text-xl md:text-2xl text-cream/85 leading-relaxed reveal">
+          Soy <span class="text-blush">Corey</span>, llevo 4 años estudiando música
+          con un poco de estrés al inicio pero siempre obsesionada. Compongo
+          en la madrugada, canto en voz baja para no despertar a jack, y
+          sigo creyendo que <em>la leche de chocolate viene de las vacas cafés</em>.
+        </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 reveal" data-delay="120">
+          <div class="card-tilt rounded-2xl border border-cream/10 bg-obsidian/50 backdrop-blur p-6 hover:border-blush/60 transition">
+            <p class="font-mono text-xs text-blush mb-2">FORMACIÓN</p>
+            <p class="text-lg">Cursando la universidad</p>
+            <p class="text-cream/60 text-sm mt-1">Licenciatura en Música contemporánea</p>
+          </div>
+          <div class="card-tilt rounded-2xl border border-cream/10 bg-obsidian/50 backdrop-blur p-6 hover:border-blush/60 transition">
+            <p class="font-mono text-xs text-blush mb-2">INSTRUMENTOS</p>
+            <p class="text-lg">Guitarra · Bajo · Piano</p>
+            <p class="text-cream/60 text-sm mt-1">y canto cuando nadie ve</p>
+          </div>
+          <div class="card-tilt rounded-2xl border border-cream/10 bg-obsidian/50 backdrop-blur p-6 hover:border-blush/60 transition">
+            <p class="font-mono text-xs text-blush mb-2">GÉNEROS</p>
+            <p class="text-lg">Indie · Jazz · Shoegaze</p>
+            <p class="text-cream/60 text-sm mt-1">(de todo un poco)</p>
+          </div>
+          <div class="card-tilt rounded-2xl border border-cream/10 bg-obsidian/50 backdrop-blur p-6 hover:border-blush/60 transition">
+            <p class="font-mono text-xs text-blush mb-2">INFLUENCIAS</p>
+            <p class="text-lg">The Strokes · Mazzie Star · Sade</p>
+            <p class="text-cream/60 text-sm mt-1">y BossaNova</p>
+          </div>
+        </div>
+
+        <!-- stats -->
+        <div class="grid grid-cols-3 gap-4 pt-8 border-t border-cream/10 reveal" data-delay="240">
+          <div>
+            <p class="font-display text-5xl md:text-6xl font-bold text-blush">07</p>
+            <p class="text-xs uppercase tracking-widest text-cream/60 mt-2">demos vivas</p>
+          </div>
+          <div>
+            <p class="font-display text-5xl md:text-6xl font-bold text-blush">02</p>
+            <p class="text-xs uppercase tracking-widest text-cream/60 mt-2">proyectos</p>
+          </div>
+          <div>
+            <p class="font-display text-5xl md:text-6xl font-bold text-blush">∞</p>
+            <p class="text-xs uppercase tracking-widest text-cream/60 mt-2">tazas de café</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCRAPBOOK / PHOTOS -->
+  <section id="scrapbook" class="relative py-24 md:py-32 px-6 md:px-10 overflow-hidden">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14 reveal">
+        <div>
+          <p class="font-mono text-xs tracking-[0.3em] text-blush mb-4">// scrapbook</p>
+          <h2 class="font-display text-5xl md:text-7xl font-bold leading-none tracking-tighter">
+            un álbum<br>
+            <span class="italic font-light text-blush">desordenado</span>
+          </h2>
+        </div>
+        <p class="font-hand text-2xl text-cream/70 -rotate-2 max-w-xs">
+          fotos sueltas del último semestre.
+        </p>
+      </div>
+
+      <div class="polaroid-grid">
+        <figure class="polaroid" style="--r:-5deg">
+          <img src="img/photo-1.jpeg" alt="" loading="lazy" />
+          <figcaption>a</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:3deg">
+          <img src="img/photo-2.jpeg" alt="" loading="lazy" />
+          <figcaption>de camino a grabar</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:-2deg">
+          <img src="img/photo-3.jpeg" alt="" loading="lazy" />
+          <figcaption>semilla intelectual</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:6deg">
+          <img src="img/photo-4.jpeg" alt="" loading="lazy" />
+          <figcaption>halloween 2025</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:-3deg">
+          <img src="img/photo-5.jpeg" alt="" loading="lazy" />
+          <figcaption>el shibita supervisor</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:4deg">
+          <img src="img/photo-6.jpeg" alt="" loading="lazy" />
+          <figcaption>producción a las 3am</figcaption>
+        </figure>
+        <figure class="polaroid" style="--r:-6deg">
+          <img src="img/photo-7.jpeg" alt="" loading="lazy" />
+          <figcaption>backstage</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC / PREVIEWS -->
+  <section id="music" class="relative py-32 md:py-40 px-6 md:px-10 bg-gradient-to-b from-ink via-obsidian to-ink">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal">
+        <div>
+          <p class="font-mono text-xs tracking-[0.3em] text-blush mb-4">// 02 · listen</p>
+          <h2 class="font-display text-5xl md:text-7xl font-bold leading-none tracking-tighter">
+            previews<br>
+            <span class="italic font-light text-cream/80">en construcción</span>
+          </h2>
+        </div>
+        <p class="text-cream/60 max-w-sm text-sm md:text-base">
+          Bocetos, demos sin pulir y fragmentos que aún no tienen nombre.
+          Apretá play — están vivos.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+
+        <!-- track 1 -->
+        <article class="track-card group reveal">
+          <div class="track-art" style="background:radial-gradient(circle at 30% 30%, #ff5fa2, #1a0e1a 70%)"></div>
+          <div class="track-body">
+            <div class="flex items-center justify-between text-xs font-mono text-cream/60 uppercase tracking-wider">
+              <span>track 01 · demo</span>
+              <span class="track-duration">—:—</span>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl font-semibold mt-2">bass</h3>
+            <p class="text-cream/60 text-sm mt-2">Línea de bajo gruesa, grabada en una toma rápida.</p>
+            <button class="play-btn" data-src="audios/bass.mp3" aria-label="Reproducir bass">
+              <svg viewBox="0 0 24 24" class="size-5" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <span>play preview</span>
+            </button>
+            <div class="waveform"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </article>
+
+        <!-- track 2 -->
+        <article class="track-card group reveal" data-delay="100">
+          <div class="track-art" style="background:radial-gradient(circle at 70% 30%, #ff1f8f, #14091a 70%)"></div>
+          <div class="track-body">
+            <div class="flex items-center justify-between text-xs font-mono text-cream/60 uppercase tracking-wider">
+              <span>track 02 · sketch</span>
+              <span class="track-duration">—:—</span>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl font-semibold mt-2">nightcrawler</h3>
+            <p class="text-cream/60 text-sm mt-2">Idea nocturna a medio cocer, con texturas oscuras.</p>
+            <button class="play-btn" data-src="audios/nightcrawler.mp3" aria-label="Reproducir nightcrawler">
+              <svg viewBox="0 0 24 24" class="size-5" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+              <span>play preview</span>
+            </button>
+            <div class="waveform"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos" class="relative py-32 md:py-40 px-6 md:px-10">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 reveal">
+        <div>
+          <p class="font-mono text-xs tracking-[0.3em] text-blush mb-4">// 03 · watch</p>
+          <h2 class="font-display text-5xl md:text-7xl font-bold leading-none tracking-tighter">
+            en<br>
+            <span class="italic font-light text-blush">vivo</span>
+          </h2>
+        </div>
+        <p class="text-cream/60 max-w-sm text-sm md:text-base">
+          Sesiones improvisadas y snippets de ensayo. Cosas que pasan
+          cuando la cámara está prendida sin querer.
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-1 gap-6">
+
+        <!-- video 1 -->
+        <article class="video-card group reveal">
+          <div class="video-wrap">
+            <video class="video-player" controls preload="metadata" playsinline poster="">
+              <source src="vids/guitar.mp4" type="video/mp4" />
+              tu navegador no soporta video.
+            </video>
+          </div>
+          <div class="video-body">
+            <div class="flex items-center justify-between text-xs font-mono text-cream/60 uppercase tracking-wider">
+              <span>video 01 · session</span>
+              <span class="track-duration">—:—</span>
+            </div>
+            <h3 class="font-display text-3xl md:text-4xl font-semibold mt-2">guitarra · sesión</h3>
+            <p class="text-cream/60 text-sm mt-2">Una toma de tarde con la guitarra eléctrica.</p>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS / TIMELINE -->
+  <section id="projects" class="relative py-32 md:py-40 px-6 md:px-10">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="mb-20 reveal">
+        <p class="font-mono text-xs tracking-[0.3em] text-blush mb-4">// 04 · upcoming</p>
+        <h2 class="font-display text-5xl md:text-7xl font-bold leading-none tracking-tighter">
+          próximos<br>
+          <span class="italic font-light text-blush">proyectos</span>
+        </h2>
+      </div>
+
+      <ol class="timeline">
+
+        <li class="timeline-item reveal">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <p class="font-mono text-xs tracking-widest text-blush">MAY · 2026</p>
+            <h3 class="font-display text-3xl md:text-4xl font-semibold mt-2">EP debut · "soft static"</h3>
+            <p class="text-cream/70 mt-3 max-w-2xl">Cinco canciones grabadas entre el dormitorio y un estudio prestado. Mezcla final en proceso.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">producción</span>
+              <span class="tag">mezcla</span>
+              <span class="tag">artwork</span>
+            </div>
+          </div>
+        </li>
+
+        <li class="timeline-item reveal" data-delay="100">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <p class="font-mono text-xs tracking-widest text-blush">JUN · 2026</p>
+            <h3 class="font-display text-3xl md:text-4xl font-semibold mt-2">recital final del semestre</h3>
+            <p class="text-cream/70 mt-3 max-w-2xl">Programa con piezas propias y un par de covers. Auditorio de la universidad.</p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              <span class="tag">en vivo</span>
+              <span class="tag">ensayo diario</span>
+            </div>
+          </div>
+        </li>
+
+      </ol>
+    </div>
+  </section>
+
+  <!-- QUOTE / EASTER EGG SHIBA -->
+  <section class="relative py-24 px-6 md:px-10 overflow-hidden">
+    <div class="max-w-5xl mx-auto text-center reveal">
+      <div class="mx-auto mb-10 select-none">
+        <img src="svg/shiba-inu.png" alt="pequeño shiba" class="shiba mx-auto" />
+        <p class="font-hand text-2xl text-cream/70 -rotate-2">a wild small shiba appears</p>
+      </div>
+      <blockquote class="font-display italic text-3xl md:text-5xl leading-tight text-cream/90">
+        “quiero que mi música suene como la que<br>
+        <span class="text-blush">alguna vez me ayudó</span>.”
+      </blockquote>
+      <p class="font-mono text-xs tracking-[0.3em] text-cream/50 mt-6">— yo, divagando</p>
+    </div>
+  </section>
+
+  <!-- CONTACT / SOCIALS -->
+  <section id="contact" class="relative py-32 md:py-40 px-6 md:px-10 border-t border-cream/10">
+    <div class="max-w-7xl mx-auto">
+
+      <div class="grid lg:grid-cols-12 gap-12 items-end">
+        <div class="lg:col-span-7 reveal">
+          <p class="font-mono text-xs tracking-[0.3em] text-blush mb-4">// 05 · contact</p>
+          <h2 class="font-display text-6xl md:text-8xl lg:text-9xl font-bold leading-[0.85] tracking-tighter">
+            contactame<br>
+            <span class="italic font-light"><span class="text-hotpink">:)</span></span>
+          </h2>
+        </div>
+
+        <div class="lg:col-span-5 space-y-4 reveal" data-delay="120">
+          <a href="mailto:coreyramirez.p@gmail.com" class="contact-link group">
+            <span>coreyramirez.p@gmail.com</span>
+            <svg viewBox="0 0 24 24" class="size-5 transition group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
+          <p class="text-cream/60 text-sm leading-relaxed">
+            Para colabos, sesiones, o cualquier cosa interesante.
+          </p>
+        </div>
+      </div>
+
+      <!-- socials grid -->
+      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-px bg-cream/10 rounded-3xl overflow-hidden border border-cream/10 reveal" data-delay="240">
+        <a href="#" class="social-cell group">
+          <span class="social-label">@corecaina</span>
+          <span class="social-platform">instagram</span>
+          <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+        <a href="#" class="social-cell group">
+          <span class="social-label">@corecaina</span>
+          <span class="social-platform">tiktok</span>
+          <svg class="social-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative px-6 md:px-10 pt-16 pb-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="font-display font-bold text-[28vw] md:text-[24vw] leading-[0.8] tracking-tighter text-cream/5 select-none">
+        corey
+      </div>
+      <div class="mt-8 flex flex-col md:flex-row gap-4 md:items-center justify-between text-xs font-mono text-cream/50 uppercase tracking-widest">
+        <p>© 2026 · corey · by @gael-marquez</p>
+        <p title="↑ ↑ ↓ ↓ ← → ← → b a">🐕 powered by a small shiba</p>
+        <p><a class="hover:text-blush" href="#top">back to top ↑</a></p>
+      </div>
+      <p class="mt-6 text-center text-[10px] font-mono text-cream/25 tracking-[0.3em] uppercase">
+        psst · try ↑ ↑ ↓ ↓ ← → ← → b a
+      </p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
